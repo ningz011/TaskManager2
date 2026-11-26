@@ -33,4 +33,23 @@
                        class="text-sm font-medium text-slate-700 hover:text-slate-900 px-3 py-2">
                         Login
                     </a>
-                    <a href="{{ route
+                    <a href="{{ route('register') }}"
+                       class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+                        Register
+                    </a>
+                @endauth
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        @if (session('status'))
+            <div class="mb-6 rounded-lg bg-emerald-50 border border-emerald-200 px-4 py-3 text-sm text-emerald-800">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        @yield('content')
+    </main>
+</body>
+</html>
